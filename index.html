@@ -16,9 +16,9 @@
       <h1>EgoHAnG: Graph-Enhanced Horizon Aware<br>Egocentric Action Anticipation</h1>
 
       <div class="authors">
-        <a href="#" title="Add author homepage">Pawanesh Kumar Vishwakarma</a><sup>1</sup>
-        <a href="#" title="Add author homepage">Ananda S. Chowdhury</a><sup>2</sup>
-        <a href="#" title="Add author homepage">Abhimanyu Sahu</a><sup>1</sup>
+        <a href="https://scholar.google.co.in/citations?user=mBSLhZgAAAAJ" target="_blank" title="Add author homepage">Pawanesh Kumar Vishwakarma</a><sup>1</sup>
+        <a href="https://scholar.google.com/citations?user=s9q_hXoAAAAJ&hl=en" target="_blank" title="Add author homepage">Ananda S. Chowdhury</a><sup>2</sup>
+        <a href="https://scholar.google.co.in/citations?user=JDV7Af0AAAAJ" target="_blank" title="Add author homepage">Abhimanyu Sahu</a><sup>1</sup>
       </div>
 
       <div class="affiliations">
@@ -44,19 +44,13 @@
         lightweight models, and more recently, Transformer-based methods. However, most existing
         solutions rely primarily on sequential modeling, which often struggles to capture complex
         inter-frame relationships and fails to effectively handle short-, mid-, and long-term cues
-        appearing at different times in the future.
-      </p>
-      <p>
-        In this paper, we propose <strong>EgoHAnG</strong> (Egocentric Horizon Aware Action Anticipation
+        appearing at different times in the future. In this paper, we propose <strong>EgoHAnG</strong> (Egocentric Horizon Aware Action Anticipation
         using Graphs), an end-to-end framework that integrates multimodal fusion with graph-based
         relational reasoning and Transformer-based temporal modeling. Our approach first performs
         early fusion of RGB and optical-flow features using a pretrained ResNet-50 to capture
         complementary appearance and motion cues. We then construct a dynamic k-NN graph over the
         observed frames and apply graph-based attention to model inter-frame relational structures,
-        enabling robust capture of long-range temporal dependencies in egocentric videos.
-      </p>
-      <p>
-        Finally, we introduce a horizon-aware decoder with learnable horizon queries to independently
+        enabling robust capture of long-range temporal dependencies in egocentric videos. Finally, we introduce a horizon-aware decoder with learnable horizon queries to independently
         predict verb, noun, and action labels across multiple anticipation horizons, improving both
         short- and long-term action anticipation. Experimental evaluations on EPIC-Kitchens and
         EGTEA Gaze+ demonstrate that the proposed method improves Top-5 action recall by 1.1% and
