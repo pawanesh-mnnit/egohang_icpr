@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EgoHAnG: Graph-Enhanced Horizon Aware Egocentric Action Anticipation">
+  <title>EgoHAnG: Graph-Enhanced Horizon Aware Egocentric Action Anticipation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1>EgoHAnG: Graph-Enhanced Horizon Aware<br>Egocentric Action Anticipation</h1>
+
+      <div class="authors">
+        <a href="#" title="Add author homepage">Pawanesh Kumar Vishwakarma</a><sup>1</sup>
+        <a href="#" title="Add author homepage">Ananda S. Chowdhury</a><sup>2</sup>
+        <a href="#" title="Add author homepage">Abhimanyu Sahu</a><sup>1</sup>
+      </div>
+
+      <div class="affiliations">
+        <span><sup>1</sup> Motilal Nehru National Institute of Technology Allahabad</span>
+        <span><sup>2</sup> Jadavpur University</span>
+      </div>
+
+      <div class="venue">
+        <span>ICPR 2026</span>
+      </div>
+    </header>
+
+    <section class="teaser">
+      <img src="assets/egohang_architecture.png" alt="Overview of the EgoHAnG framework">
+    </section>
+
+    <section>
+      <h2>Abstract</h2>
+      <p>
+        Egocentric action anticipation has become an increasingly popular topic in computer vision.
+        Most existing state-of-the-art action anticipation approaches rely on multi-modal feature fusion
+        and predominantly employ architectures such as 3D CNNs, LSTM, RULSTM, I3D, X3D-XS,
+        lightweight models, and more recently, Transformer-based methods. However, most existing
+        solutions rely primarily on sequential modeling, which often struggles to capture complex
+        inter-frame relationships and fails to effectively handle short-, mid-, and long-term cues
+        appearing at different times in the future.
+      </p>
+      <p>
+        In this paper, we propose <strong>EgoHAnG</strong> (Egocentric Horizon Aware Action Anticipation
+        using Graphs), an end-to-end framework that integrates multimodal fusion with graph-based
+        relational reasoning and Transformer-based temporal modeling. Our approach first performs
+        early fusion of RGB and optical-flow features using a pretrained ResNet-50 to capture
+        complementary appearance and motion cues. We then construct a dynamic k-NN graph over the
+        observed frames and apply graph-based attention to model inter-frame relational structures,
+        enabling robust capture of long-range temporal dependencies in egocentric videos.
+      </p>
+      <p>
+        Finally, we introduce a horizon-aware decoder with learnable horizon queries to independently
+        predict verb, noun, and action labels across multiple anticipation horizons, improving both
+        short- and long-term action anticipation. Experimental evaluations on EPIC-Kitchens and
+        EGTEA Gaze+ demonstrate that the proposed method improves Top-5 action recall by 1.1% and
+        3.73%, respectively, over current state-of-the-art methods.
+      </p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Method Overview</h2>
+      <p>
+        EgoHAnG combines early RGB–optical-flow fusion, Graph-Enhanced Temporal Reasoning (GETR),
+        and a Horizon-Aware Transformer Decoder (HATD). GETR couples similarity-based graph attention
+        with ordered temporal encoding, while learnable horizon queries extract future evidence specific
+        to each anticipation time.
+      </p>
+      <div class="method-grid">
+        <div><strong>1. Multimodal Features</strong><span>RGB and optical-flow descriptors are compressed and fused.</span></div>
+        <div><strong>2. GETR</strong><span>A k-NN graph and GAT model non-local inter-frame relations.</span></div>
+        <div><strong>3. Temporal Encoding</strong><span>A Transformer encoder captures ordered long-range dynamics.</span></div>
+        <div><strong>4. HATD</strong><span>Learnable horizon queries predict verb, noun, and action labels.</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Qualitative Results</h2>
+      <img class="result-image" src="assets/qualitative_results.png" alt="EgoHAnG qualitative anticipation results across multiple horizons">
+      <p class="caption">
+        Top-5 action predictions at multiple anticipation horizons. Correct predictions are highlighted
+        in green, demonstrating how EgoHAnG remains effective from short to long anticipation times.
+      </p>
+    </section>
+
+    <section>
+      <h2>Results</h2>
+      <div class="results">
+        <div class="result-card">
+          <span class="dataset">EPIC-Kitchens</span>
+          <strong>28.71%</strong>
+          <span>Top-5 Action Recall</span>
+          <small>+1.11 over second best</small>
+        </div>
+        <div class="result-card">
+          <span class="dataset">EGTEA Gaze+</span>
+          <strong>70.03%</strong>
+          <span>Top-5 Action Recall</span>
+          <small>+3.73 over second best</small>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Paper &amp; Code</h2>
+      <div class="publication">
+        <a class="paper-thumb" href="EgoHAnG_ICPR26.pdf">
+          <img src="assets/egohang_architecture.png" alt="EgoHAnG paper thumbnail">
+        </a>
+        <div class="pub-info">
+          <p>Pawanesh Kumar Vishwakarma, Ananda S. Chowdhury, and Abhimanyu Sahu</p>
+          <p class="paper-title">EgoHAnG: Graph-Enhanced Horizon Aware Egocentric Action Anticipation</p>
+          <p>ICPR, 2026</p>
+          <div class="buttons">
+            <a href="EgoHAnG_ICPR26.pdf">PDF</a>
+            <a href="https://github.com/pawanesh-mnnit/EgoHANG">CODE</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+  </main>
+</body>
+</html>
